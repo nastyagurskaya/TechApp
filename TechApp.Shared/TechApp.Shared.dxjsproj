@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>baa70844-fb05-40e3-ae83-5da2fdd86543</ProjectGuid>
+    <AutoAssignPort>True</AutoAssignPort>
+    <RunInSimulator>True</RunInSimulator>
+    <UploadPluginsToTheCourier>True</UploadPluginsToTheCourier>
+    <Name>Shared</Name>
+    <RootNamespace>TechApp</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="data\authentication.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\controlpoint-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\db.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\journal-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="data\technicalobjects-view-model.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\logo.png" />
+    <Content Include="js\dx.all.js" />
+    <Content Include="js\dx.all.debug.js" />
+    <Content Include="js\localization\dx.messages.de.js" />
+    <Content Include="js\localization\dx.messages.en.js" />
+    <Content Include="js\localization\dx.messages.ja.js" />
+    <Content Include="js\localization\dx.messages.ru.js" />
+    <Content Include="js\cldr.min.js" />
+    <Content Include="js\cldr\event.min.js" />
+    <Content Include="js\cldr\supplemental.min.js" />
+    <Content Include="js\cldr\unresolved.min.js" />
+    <Content Include="js\globalize.min.js" />
+    <Content Include="js\jquery-3.1.0.min.js" />
+    <Content Include="js\globalize\message.min.js" />
+    <Content Include="js\globalize\number.min.js" />
+    <Content Include="js\globalize\date.min.js" />
+    <Content Include="js\globalize\currency.min.js" />
+    <Content Include="js\knockout-3.4.0.js" />
+    <Content Include="css\dx.spa.css" />
+    <Content Include="css\dx.common.css" />
+    <Content Include="css\dx.contrast.compact.css" />
+    <Content Include="css\dx.contrast.css" />
+    <Content Include="css\dx.dark.compact.css" />
+    <Content Include="css\dx.light.compact.css" />
+    <Content Include="css\dx.dark.css" />
+    <Content Include="css\dx.light.css" />
+    <Content Include="css\dx.android5.light.css" />
+    <Content Include="css\dx.ios7.default.css" />
+    <Content Include="css\dx.win8.black.css" />
+    <Content Include="css\dx.win8.white.css" />
+    <Content Include="css\dx.win10.black.css" />
+    <Content Include="css\dx.win10.white.css" />
+    <Content Include="css\icons\dxicons.ttf" />
+    <Content Include="css\icons\dxicons.woff" />
+    <Content Include="css\icons\dxiconsios.ttf" />
+    <Content Include="css\icons\dxiconsios.woff" />
+    <Content Include="techapp.shared.config.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\about.html" />
+    <Content Include="views\blank.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="css\icons\" />
+    <Folder Include="data\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="js\cldr\" />
+    <Folder Include="js\globalize\" />
+    <Folder Include="js\localization\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Target Name="ResolveReferences">
+    <Message Text="Copying references to output dir..." Importance="high" />
+    <MSBuild Targets="Build" Projects="@(ProjectReference)" Properties="OutputPath=$([System.IO.Path]::GetFullPath('$(OutputPath)'))">
+    </MSBuild>
+  </Target>
+  <Target Name="CopyFilesToOutputDirectory">
+    <Message Text="Copying files to output dir..." Importance="high" />
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content-&gt;'$(OutputPath)$([MSBuild]::MakeRelative($(MSBuildProjectDirectory),'%(FullPath)'))')" />
+  </Target>
+  <Target Name="CoreCompile">
+    <!--<Message Text="'$(MSBuildToolsPath)'"></Message>-->
+    <!--<Message Text="'$(BuildingProject)'"></Message>-->
+    <!--<Message Text="Build JSProject '$(MSBuildProjectFile)':" Importance="high"></Message>-->
+    <!--<Message Text="Finished Build JSProject '$(MSBuildProjectFile)'." Importance="high"></Message>-->
+  </Target>
+  <Target Name="CreateManifestResourceNames" Condition="'@(ResxWithNoCulture)@(ResxWithCulture)@(NonResxWithNoCulture)@(NonResxWithCulture)'!=''" />
+  <Target Name="Clean">
+    <!--
+    <Message Text="Cleaning Output files..." Importance="high" />
+    <Delete Files="@([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+    -->
+    <Message Text="Cleaning Output dir ($([System.IO.Path]::GetFullPath('$(OutputPath)')))..." Importance="high" />
+    <RemoveDir Directories="$([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+  </Target>
+</Project>

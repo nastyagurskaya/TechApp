@@ -1,0 +1,26 @@
+<div data-options="dxView : { name: 'JournalEdit', mode: 'edit', title: 'Journal' } " >
+    <div data-bind="dxCommand: { onExecute: handleSave, id: 'save', title: 'Save', icon: 'save' } "></div>
+    <div data-bind="dxCommand: { onExecute: handleCancel, id: 'cancel', behavior: 'back', title: 'Cancel', icon: 'close' }" ></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-edit-view dx-content-background dx-form-background" data-bind="dxDeferRendering: { showLoadIndicator: true, staggerItemSelector: '.dx-field', animation: 'edit-item-rendered', renderWhen: isReady }" >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Id: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: journal.Id, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Control point: </div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: controlpointSource, value: journal.ControlPoint().Id, valueExpr: 'Id', displayExpr: 'ControlName', title: 'Control point', placeholder: 'Choose Control point' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Date: </div>
+                    <div class="dx-field-value" data-bind="dxDateBox: { value: journal.Date, placeholder: 'Enter Date', type: 'date' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Executor name: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: journal.ExecutorName, placeholder: 'Enter Executor name' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

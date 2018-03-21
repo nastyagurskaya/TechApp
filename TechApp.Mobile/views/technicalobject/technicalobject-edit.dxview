@@ -1,0 +1,22 @@
+<div data-options="dxView : { name: 'TechnicalObjectEdit', mode: 'edit', title: 'Technical object' } " >
+    <div data-bind="dxCommand: { onExecute: handleSave, id: 'save', title: 'Save', icon: 'save' } "></div>
+    <div data-bind="dxCommand: { onExecute: handleCancel, id: 'cancel', behavior: 'back', title: 'Cancel', icon: 'close' }" ></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-edit-view dx-content-background dx-form-background" data-bind="dxDeferRendering: { showLoadIndicator: true, staggerItemSelector: '.dx-field', animation: 'edit-item-rendered', renderWhen: isReady }" >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Id: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: technicalobject.Id, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Journal: </div>
+                    <div class="dx-field-value" data-bind="dxLookup: { dataSource: journalSource, value: technicalobject.Journal().Id, valueExpr: 'Id', displayExpr: 'ExecutorName', title: 'Journal', placeholder: 'Choose Journal' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Name: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: technicalobject.Name, placeholder: 'Enter Name' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

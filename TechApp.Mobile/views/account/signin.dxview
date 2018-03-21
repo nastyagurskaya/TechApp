@@ -1,0 +1,30 @@
+<div data-options="dxView : { name: 'SignIn', title: 'SignIn', layout: 'empty' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div data-bind="dxLoadPanel: { message: 'Loading...', visible: loadIndicatorVisible }"></div>
+        <div class="dx-auth-content" data-bind="dxScrollView: {}">
+            <div class="dx-fieldset">
+                <div class="dx-fieldset-header">Sign In</div>
+                <div class="dx-field">
+                    <div class="dx-field-label">E-mail address</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { value: username }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Password</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { value: password, mode: 'password' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">
+                        <a class="link" data-bind="dxAction: registerClick">No account yet?</a>
+                    </div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: { onClick: loginClick, text: 'Sign In' }"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

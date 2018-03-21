@@ -1,0 +1,14 @@
+<div data-options="dxView : { name: 'Profile', title: 'Profile', pane: 'master' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div class="dx-fieldset dx-auth-content">
+            <div class="dx-fieldset-header">USERINFO</div>
+            <div class="dx-field">
+                <div class="dx-field-label">E-mail address</div>
+                <div class="dx-field-value-static">
+                    <div data-bind="text: username"></div>
+                </div>
+            </div>
+            <div data-bind="dxButton: { onClick: logoutClick, text: 'Logout' }"></div>
+        </div>
+    </div>
+</div>

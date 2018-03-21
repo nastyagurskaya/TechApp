@@ -1,0 +1,175 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>1d85433a-25fd-4124-a235-aeda5bae1126</ProjectGuid>
+    <AutoAssignPort>True</AutoAssignPort>
+    <RunInSimulator>True</RunInSimulator>
+    <UploadPluginsToTheCourier>True</UploadPluginsToTheCourier>
+    <RootNamespace>TechApp</RootNamespace>
+    <ApplicationPage>index.html</ApplicationPage>
+    <Name>TechApp.Mobile</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="index.css" />
+    <Content Include="cordova.js" />
+    <Content Include="views\account\profile.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\account\profile.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\account\register.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\account\register.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\account\signin.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\account\signin.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobject-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobject-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobject-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobject-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobjects.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\technicalobject\technicalobjects.js">
+      <SubType>Content</SubType>
+    </Content>
+    <None Include="config.xml" />
+    <Content Include="index.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="layouts\Navbar\NavbarLayout.css" />
+    <Content Include="layouts\Navbar\NavbarLayout.html" />
+    <Content Include="layouts\Navbar\NavbarLayout.js" />
+    <Content Include="layouts\Pivot\PivotLayout.css" />
+    <Content Include="layouts\Pivot\PivotLayout.html" />
+    <Content Include="layouts\Pivot\PivotLayout.js" />
+    <Content Include="layouts\SlideOut\SlideOutLayout.css" />
+    <Content Include="layouts\SlideOut\SlideOutLayout.html" />
+    <Content Include="layouts\SlideOut\SlideOutLayout.js" />
+    <Content Include="layouts\Empty\EmptyLayout.css" />
+    <Content Include="layouts\Empty\EmptyLayout.html" />
+    <Content Include="layouts\Empty\EmptyLayout.js" />
+    <Content Include="layouts\Simple\SimpleLayout.css" />
+    <Content Include="layouts\Simple\SimpleLayout.html" />
+    <Content Include="layouts\Simple\SimpleLayout.js" />
+    <Content Include="layouts\Popup\PopupLayout.css" />
+    <Content Include="layouts\Popup\PopupLayout.html" />
+    <Content Include="layouts\Popup\PopupLayout.js" />
+    <Content Include="layouts\Split\SplitLayout.css" />
+    <Content Include="layouts\Split\SplitLayout.html" />
+    <Content Include="layouts\Split\SplitLayout.js" />
+    <Content Include="techapp.config.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\controlpoint\controlpoint.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal-details.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal-details.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal-edit.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal-edit.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal.dxview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\journal\journal.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="js\" />
+    <Folder Include="layouts\" />
+    <Folder Include="layouts\Empty\" />
+    <Folder Include="layouts\Navbar\" />
+    <Folder Include="layouts\Pivot\" />
+    <Folder Include="layouts\Popup\" />
+    <Folder Include="layouts\Simple\" />
+    <Folder Include="layouts\SlideOut\" />
+    <Folder Include="layouts\Split\" />
+    <Folder Include="views\" />
+    <Folder Include="views\account\" />
+    <Folder Include="views\controlpoint\" />
+    <Folder Include="views\journal\" />
+    <Folder Include="views\technicalobject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TechApp.Shared\TechApp.Shared.dxjsproj">
+      <Name>TechApp.Shared</Name>
+      <Project>{baa70844-fb05-40e3-ae83-5da2fdd86543}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Target Name="ResolveReferences">
+    <Message Text="Copying references to output dir..." Importance="high" />
+    <MSBuild Targets="Build" Projects="@(ProjectReference)" Properties="OutputPath=$([System.IO.Path]::GetFullPath('$(OutputPath)'))">
+    </MSBuild>
+  </Target>
+  <Target Name="CopyFilesToOutputDirectory">
+    <Message Text="Copying files to output dir..." Importance="high" />
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(Content-&gt;'$(OutputPath)$([MSBuild]::MakeRelative($(MSBuildProjectDirectory),'%(FullPath)'))')" />
+  </Target>
+  <Target Name="CoreCompile">
+    <!--<Message Text="'$(MSBuildToolsPath)'"></Message>-->
+    <!--<Message Text="'$(BuildingProject)'"></Message>-->
+    <!--<Message Text="Build JSProject '$(MSBuildProjectFile)':" Importance="high"></Message>-->
+    <!--<Message Text="Finished Build JSProject '$(MSBuildProjectFile)'." Importance="high"></Message>-->
+  </Target>
+  <Target Name="CreateManifestResourceNames" Condition="'@(ResxWithNoCulture)@(ResxWithCulture)@(NonResxWithNoCulture)@(NonResxWithCulture)'!=''" />
+  <Target Name="Clean">
+    <!--
+    <Message Text="Cleaning Output files..." Importance="high" />
+    <Delete Files="@([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+    -->
+    <Message Text="Cleaning Output dir ($([System.IO.Path]::GetFullPath('$(OutputPath)')))..." Importance="high" />
+    <RemoveDir Directories="$([System.IO.Path]::GetFullPath('$(OutputPath)'))" />
+  </Target>
+</Project>

@@ -1,0 +1,36 @@
+<div data-options="dxView : { name: 'Register', title: 'Register', layout: 'empty' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div data-bind="dxLoadPanel: { message: 'Loading...', visible: loadIndicatorVisible }"></div>
+        <div class="dx-auth-content" data-bind="dxScrollView: {}">
+            <div class="dx-fieldset">
+                <div class="dx-fieldset-header">Register a new account</div>
+                <div class="dx-field">
+                    <div class="dx-field-label">E-mail address</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { value: username }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Password</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { value: password, mode: 'password' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Retype Password</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { value: passwordRetype, mode: 'password' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">
+                        <a class="link" data-bind="dxAction: signinClick">Have an account?</a>
+                    </div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: { onClick: registerClick, text: 'Register' }"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

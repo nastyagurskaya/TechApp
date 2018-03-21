@@ -1,0 +1,26 @@
+<div data-options="dxView : { name: 'TechnicalObjectDetails', title: 'Technical object' } " >
+    <div data-bind="dxCommand: { onExecute: '#TechnicalObjectEdit/{id}', direction: 'none', id: 'edit', title: 'Edit', icon: 'edit' }"></div>
+    <div data-bind="dxCommand: { onExecute: handleDelete, id: 'delete', title: 'Delete', icon: 'remove' }"></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-detail-view dx-content-background" data-bind="dxDeferRendering: { showLoadIndicator: true, staggerItemSelector: 'dx-fieldset-header,.dx-field', animation: 'detail-item-rendered', renderWhen: isReady }" >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-fieldset-header" data-bind="text: technicalobject.Name"></div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Id: </div>
+                    <div class="dx-field-value-static" data-bind="text: technicalobject.Id"></div>
+                </div>
+                <!-- ko with: technicalobject.Journal() -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Journal: </div>
+                    <div class="dx-field-value-static" data-bind="text: ExecutorName"></div>
+                </div>
+                <!-- /ko -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Name: </div>
+                    <div class="dx-field-value-static" data-bind="text: technicalobject.Name"></div>
+                </div>
+            </div>
+            <div data-options="dxContentPlaceholder : { name: 'view-footer', animation: 'none' } " ></div>
+        </div>
+    </div>
+</div>
